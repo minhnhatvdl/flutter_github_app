@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text('Hello'),
+      child: Text('Setting Screen'),
     );
   }
 }
