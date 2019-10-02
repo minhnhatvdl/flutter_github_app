@@ -48,6 +48,7 @@ class _TabsbarNavigatorState extends State<TabsbarNavigator> {
       appBar: appBar,
       body: Container(
         height: MediaQuery.of(context).size.height - appBar.preferredSize.height,
+        padding: EdgeInsets.all(10),
         child: _listTabsbar[_indexTabsbar]['body'],
       ),
       bottomNavigationBar: BottomNavigationBar(

@@ -1,24 +1,35 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter_github_app/providers/list_favorite_repos_provider.dart';
 import 'package:http/http.dart' as http;
-import '../models/repos.dart';
+import 'package:provider/provider.dart';
+import './repos_provider.dart';
 
 class ListReposProvider with ChangeNotifier {
-  List<Repos> _listRepos = [];
-  List<Repos> get listRepos => _listRepos;
-
+  // list of repos
+  List<ReposProvider> _listRepos = [];
+  List<ReposProvider> get listRepos => _listRepos;
+  // username
   String _username = '';
   String get username => _username;
-
+  // is loading
+  bool _isLoading = false;
+  bool get isLoading => _isLoading;
+  // get list of repos
   Future<void> getListRepos(String value) async {
-    final String url = 'https://api.github.com/users/$value/repos';
+    final String url =
+        'https://api.github.com/users/$value/repos?client_id=8af6a1ce7f7702adce07&client_secret=45ba3b1f678b24b5e0dc38fc9a1f9049113f95ef';
     _username = value;
     try {
+      _isLoading = true;
+      notifyListeners();
+
       final response = await http.get(url);
       final data = json.decode(response.body);
-      final List<Repos> result = [];
+      // list of repos
+      final List<ReposProvider> result = [];
       data.forEach((e) {
-        result.add(Repos(
+        result.add(ReposProvider(
           id: e['id'],
           name: e['name'],
           description: e['description'],
@@ -27,9 +38,10 @@ class ListReposProvider with ChangeNotifier {
         ));
       });
       _listRepos = result;
-      notifyListeners();
     } catch (error) {
       _listRepos = [];
+    } finally {
+      _isLoading = false;
       notifyListeners();
     }
   }

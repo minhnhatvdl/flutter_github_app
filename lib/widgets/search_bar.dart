@@ -10,12 +10,6 @@ class SearchBar extends StatefulWidget {
 class _SearchBarState extends State<SearchBar> {
   final _searchController = TextEditingController();
 
-  void _handleSearch(BuildContext ctx) {
-    Provider.of<ListReposProvider>(ctx, listen: false)
-        .getListRepos(_searchController.text)
-        .then((_) => {});
-  }
-
   @override
   void initState() {
     _searchController.text =
@@ -25,6 +19,7 @@ class _SearchBarState extends State<SearchBar> {
 
   @override
   Widget build(BuildContext context) {
+    final getListRepos =  Provider.of<ListReposProvider>(context, listen: false).getListRepos;
     return Card(
       elevation: 5,
       child: Container(
@@ -37,7 +32,7 @@ class _SearchBarState extends State<SearchBar> {
               Container(
                 width: constraints.maxWidth - 32,
                 child: TextField(
-                  decoration: InputDecoration(labelText: 'Search'),
+                  decoration: InputDecoration(labelText: 'Search username on Github'),
                   controller: _searchController,
                 ),
               ),
@@ -47,7 +42,7 @@ class _SearchBarState extends State<SearchBar> {
                   size: 32,
                   color: Theme.of(context).primaryColor,
                 ),
-                onTap: () => _handleSearch(context),
+                onTap: () => getListRepos(_searchController.text),
               )
             ],
           ),
