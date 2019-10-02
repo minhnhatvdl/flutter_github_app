@@ -41,11 +41,15 @@ class _TabsbarNavigatorState extends State<TabsbarNavigator> {
 
   @override
   Widget build(BuildContext context) {
+    final AppBar appBar = AppBar(
+      title: Text(_listTabsbar[_indexTabsbar]['title']),
+    );
     return Scaffold(
-      appBar: AppBar(
-        title: Text(_listTabsbar[_indexTabsbar]['title']),
+      appBar: appBar,
+      body: Container(
+        height: MediaQuery.of(context).size.height - appBar.preferredSize.height,
+        child: _listTabsbar[_indexTabsbar]['body'],
       ),
-      body: _listTabsbar[_indexTabsbar]['body'],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _indexTabsbar,
         onTap: _selectTabsbar,
