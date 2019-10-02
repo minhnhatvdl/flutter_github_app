@@ -1,8 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter_github_app/providers/list_favorite_repos_provider.dart';
 import 'package:http/http.dart' as http;
-import 'package:provider/provider.dart';
 import './repos_provider.dart';
 
 class ListReposProvider with ChangeNotifier {
@@ -35,6 +33,7 @@ class ListReposProvider with ChangeNotifier {
           description: e['description'],
           owner: e['owner']['login'],
           dateCreation: e['created_at'],
+          language: e['language'],
         ));
       });
       _listRepos = result;

@@ -24,13 +24,13 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.green,
           accentColor: Colors.white,
           textTheme: TextTheme(
-            
               title: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: Colors.green),
+              body1: TextStyle(fontSize: 16),
+              headline: TextStyle(color: Colors.green),
               button: TextStyle(fontSize: 18, color: Colors.green)),
-
         ),
       ),
     );
