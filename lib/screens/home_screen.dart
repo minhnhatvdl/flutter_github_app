@@ -8,9 +8,9 @@ class HomeScreen extends StatelessWidget {
     return LayoutBuilder(
       builder: (ctx, constraints) => Column(
         children: <Widget>[
-          Container(height: constraints.maxHeight * 0.15, child: SearchBar()),
+          Container(height: 90, child: SearchBar()),
           Container(
-              height: constraints.maxHeight * 0.85,
+              height: constraints.maxHeight - 90,
               padding: EdgeInsets.only(top: 10),
               child: ListRepos())
         ],
