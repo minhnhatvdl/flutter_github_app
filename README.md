@@ -22,7 +22,7 @@ samples, guidance on mobile development, and a full API reference.
  
  flutter config --enable-web
  
- cd <into project directory>
+ cd into project directory
  
  flutter create .
  
