@@ -17,7 +17,9 @@ samples, guidance on mobile development, and a full API reference.
 
 # run flutter in web
  flutter channel master
+ 
  flutter upgrade
+ 
  flutter config --enable-web
  cd <into project directory>
  flutter create .
