@@ -16,6 +16,7 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 # run flutter in web
+
  flutter channel master
  
  flutter upgrade
@@ -29,3 +30,9 @@ samples, guidance on mobile development, and a full API reference.
  flutter run -d chrome
 
  Source: https://flutter.dev/docs/get-started/web
+
+# Building the app for release
+
+ flutter build web
+
+ Source: https://flutter.dev/docs/deployment/web#building-the-app-for-release
