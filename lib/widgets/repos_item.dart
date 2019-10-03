@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_github_app/providers/list_favorite_repos_provider.dart';
+import 'package:flutter_github_app/providers/repos_provider.dart';
 import 'package:flutter_github_app/widgets/detail_repos.dart';
 import 'package:provider/provider.dart';
-import '../providers/repos_provider.dart';
 
 class ReposItem extends StatelessWidget {
   void showDetailRepos(BuildContext ctx, ReposProvider value) {

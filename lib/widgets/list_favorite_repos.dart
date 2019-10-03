@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_github_app/providers/list_favorite_repos_provider.dart';
+import 'package:flutter_github_app/providers/repos_provider.dart';
+import 'package:flutter_github_app/widgets/repos_item.dart';
 import 'package:provider/provider.dart';
-import '../widgets/repos_item.dart';
-import '../providers/list_favorite_repos_provider.dart';
-import '../providers/repos_provider.dart';
 
 class ListFavoriteRepos extends StatelessWidget {
   @override

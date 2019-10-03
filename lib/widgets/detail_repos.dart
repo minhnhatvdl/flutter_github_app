@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_github_app/providers/repos_provider.dart';
 import 'package:intl/intl.dart';
-import '../providers/repos_provider.dart';
 
 class DetailRepos extends StatelessWidget {
   final ReposProvider repos;

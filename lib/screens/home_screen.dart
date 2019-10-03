@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../widgets/list_repos.dart';
-import '../widgets/search_bar.dart';
+import 'package:flutter_github_app/widgets/list_repos.dart';
+import 'package:flutter_github_app/widgets/search_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   @override

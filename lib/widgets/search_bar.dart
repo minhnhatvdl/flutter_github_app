@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_github_app/providers/list_repos_provider.dart';
 import 'package:provider/provider.dart';
-import '../providers/list_repos_provider.dart';
 
 class SearchBar extends StatefulWidget {
   @override
