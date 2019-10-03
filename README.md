@@ -21,6 +21,9 @@ samples, guidance on mobile development, and a full API reference.
  flutter upgrade
  
  flutter config --enable-web
+ 
  cd <into project directory>
+ 
  flutter create .
+ 
  flutter run -d chrome
