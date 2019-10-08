@@ -23,7 +23,7 @@ class DetailRepos extends StatelessWidget {
           Container(
             margin: EdgeInsets.symmetric(vertical: 10),
             child: Text(
-              repos.description != null ? repos.description : '',
+              repos.description ?? '',
               style: Theme.of(context).textTheme.body1,
             ),
           ),
@@ -31,7 +31,7 @@ class DetailRepos extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               Text(
-                repos.language != null ? repos.language : '',
+                repos.language ?? '',
                 style: Theme.of(context).textTheme.subtitle,
               ),
               Text(

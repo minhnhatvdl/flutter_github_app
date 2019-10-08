@@ -11,11 +11,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider.value(
-          value: ListReposProvider(),
+        ChangeNotifierProvider(
+          builder: (_) => ListReposProvider(),
         ),
-        ChangeNotifierProvider.value(
-          value: ListFavoriteReposProvider(),
+        ChangeNotifierProvider(
+          builder: (_) => ListFavoriteReposProvider(),
         )
       ],
       child: MaterialApp(

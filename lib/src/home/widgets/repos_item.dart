@@ -12,9 +12,9 @@ class ReposItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ReposProvider repos =
-        Provider.of<ReposProvider>(context, listen: false);
+    Provider.of<ReposProvider>(context, listen: false);
     final ListFavoriteReposProvider listFavoriteReposProvider =
-        Provider.of<ListFavoriteReposProvider>(context, listen: false);
+    Provider.of<ListFavoriteReposProvider>(context, listen: false);
     return InkWell(
       onTap: () => showDetailRepos(context, repos),
       child: Card(
@@ -31,16 +31,16 @@ class ReposItem extends StatelessWidget {
           trailing: InkWell(
             onTap: () => listFavoriteReposProvider.toggleFavoriteRepos(repos),
             child: Consumer<ListFavoriteReposProvider>(
-              builder: (ctx, listFavoriteReposProvider, _) {
-                final isFavoriteRepository = listFavoriteReposProvider.listFavoriteRepos
-                    .indexWhere((e) => e.id == repos.id) >= 0;
-                return Icon(
-                  isFavoriteRepository
-                  ? Icons.favorite
-                      : Icons.favorite_border,
-                  color: Theme.of(context).primaryColor,
-                );
-              }
+                builder: (ctx, listFavoriteReposProvider, _) {
+                  final isFavoriteRepository = listFavoriteReposProvider.listFavoriteRepos
+                      .indexWhere((e) => e.id == repos.id) >= 0;
+                  return Icon(
+                    isFavoriteRepository
+                        ? Icons.favorite
+                        : Icons.favorite_border,
+                    color: Theme.of(context).primaryColor,
+                  );
+                }
             ),
           ),
         ),
