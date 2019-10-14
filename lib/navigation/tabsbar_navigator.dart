@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_github_app/screens/favorite_screen.dart';
-import 'package:flutter_github_app/screens/home_screen.dart';
-import 'package:flutter_github_app/widgets/Setting.dart';
+import 'package:flutter_github_app/src/favorite/favorite_screen.dart';
+import 'package:flutter_github_app/src/home/screens/home_screen.dart';
+import 'package:flutter_github_app/src/settings/setting.dart';
 
 class TabsbarNavigator extends StatefulWidget {
   @override

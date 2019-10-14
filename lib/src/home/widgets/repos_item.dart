@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_github_app/providers/list_favorite_repos_provider.dart';
-import 'package:flutter_github_app/providers/repos_provider.dart';
-import 'package:flutter_github_app/widgets/detail_repos.dart';
+import 'package:flutter_github_app/src/favorite/providers/list_favorite_repos_provider.dart';
+import 'package:flutter_github_app/src/home/providers/repos_provider.dart';
+import 'package:flutter_github_app/src/home/widgets/details_repos.dart';
 import 'package:provider/provider.dart';
 
 class ReposItem extends StatelessWidget {

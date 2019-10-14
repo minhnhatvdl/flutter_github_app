@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter_github_app/providers/repos_provider.dart';
+import 'package:flutter_github_app/src/home/providers/repos_provider.dart';
 import 'package:http/http.dart' as http;
 
 class ListReposProvider with ChangeNotifier {

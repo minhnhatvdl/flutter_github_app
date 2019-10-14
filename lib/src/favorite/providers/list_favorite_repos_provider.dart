@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_github_app/providers/repos_provider.dart';
+import 'package:flutter_github_app/src/home/providers/repos_provider.dart';
 
 class ListFavoriteReposProvider with ChangeNotifier {
   List<ReposProvider> _listFavoriteRepos = [];

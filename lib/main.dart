@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_github_app/navigation/tabsbar_navigator.dart';
-import 'package:flutter_github_app/providers/list_favorite_repos_provider.dart';
-import 'package:flutter_github_app/providers/list_repos_provider.dart';
+import 'package:flutter_github_app/src/favorite/providers/list_favorite_repos_provider.dart';
+import 'package:flutter_github_app/src/home/providers/list_repos_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
