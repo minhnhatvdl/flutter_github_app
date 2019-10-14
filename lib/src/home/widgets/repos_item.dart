@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_github_app/providers/list_favorite_repos_provider.dart';
-import 'package:flutter_github_app/providers/repos_provider.dart';
-import 'package:flutter_github_app/widgets/detail_repos.dart';
+import 'package:flutter_github_app/src/favorite/providers/list_favorite_repos_provider.dart';
+import 'package:flutter_github_app/src/home/providers/repos_provider.dart';
+import 'package:flutter_github_app/src/home/widgets/details_repos.dart';
 import 'package:provider/provider.dart';
 
 class ReposItem extends StatelessWidget {
@@ -12,9 +12,9 @@ class ReposItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ReposProvider repos =
-        Provider.of<ReposProvider>(context, listen: false);
+    Provider.of<ReposProvider>(context, listen: false);
     final ListFavoriteReposProvider listFavoriteReposProvider =
-        Provider.of<ListFavoriteReposProvider>(context, listen: false);
+    Provider.of<ListFavoriteReposProvider>(context, listen: false);
     return InkWell(
       onTap: () => showDetailRepos(context, repos),
       child: Card(
@@ -26,19 +26,21 @@ class ReposItem extends StatelessWidget {
             style: Theme.of(context).textTheme.title,
           ),
           subtitle: Text(
-            repos.description != null ? repos.description : '',
+            repos.description ?? '',
           ),
           trailing: InkWell(
             onTap: () => listFavoriteReposProvider.toggleFavoriteRepos(repos),
             child: Consumer<ListFavoriteReposProvider>(
-              builder: (ctx, listFavoriteReposProvider, _) => Icon(
-                listFavoriteReposProvider.listFavoriteRepos
-                            .indexWhere((e) => e.id == repos.id) >=
-                        0
-                    ? Icons.favorite
-                    : Icons.favorite_border,
-                color: Theme.of(context).primaryColor,
-              ),
+                builder: (ctx, listFavoriteReposProvider, _) {
+                  final isFavoriteRepository = listFavoriteReposProvider.listFavoriteRepos
+                      .indexWhere((e) => e.id == repos.id) >= 0;
+                  return Icon(
+                    isFavoriteRepository
+                        ? Icons.favorite
+                        : Icons.favorite_border,
+                    color: Theme.of(context).primaryColor,
+                  );
+                }
             ),
           ),
         ),

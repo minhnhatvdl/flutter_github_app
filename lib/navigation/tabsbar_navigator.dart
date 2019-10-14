@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_github_app/screens/favorite_screen.dart';
-import 'package:flutter_github_app/screens/home_screen.dart';
-import 'package:flutter_github_app/screens/setting_screen.dart';
+import 'package:flutter_github_app/src/favorite/favorite_screen.dart';
+import 'package:flutter_github_app/src/home/screens/home_screen.dart';
+import 'package:flutter_github_app/src/settings/setting.dart';
 
 class TabsbarNavigator extends StatefulWidget {
   @override
@@ -25,7 +25,7 @@ class _TabsbarNavigatorState extends State<TabsbarNavigator> {
     },
     {
       'title': 'Setting',
-      'body': SettingScreen(),
+      'body': Setting(),
       'icon': Icons.settings,
       'icon_title': 'Setting',
     }
@@ -47,19 +47,19 @@ class _TabsbarNavigatorState extends State<TabsbarNavigator> {
     return Scaffold(
       appBar: appBar,
       body: Container(
-        height: MediaQuery.of(context).size.height - appBar.preferredSize.height,
         padding: EdgeInsets.all(10),
         child: _listTabsbar[_indexTabsbar]['body'],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _indexTabsbar,
         onTap: _selectTabsbar,
-        items: _listTabsbar
-            .map((e) => BottomNavigationBarItem(
-                  icon: Icon(e['icon']),
-                  title: Text(e['icon_title']),
-                ))
-            .toList(),
+        items: [
+          for (final e in _listTabsbar)
+            BottomNavigationBarItem(
+              icon: Icon(e['icon']),
+              title: Text(e['icon_title']),
+            ),
+        ]
       ),
     );
   }

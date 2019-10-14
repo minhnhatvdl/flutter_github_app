@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_github_app/providers/list_repos_provider.dart';
+import 'package:flutter_github_app/src/home/providers/list_repos_provider.dart';
 import 'package:provider/provider.dart';
 
 class SearchBar extends StatefulWidget {
@@ -11,10 +11,16 @@ class _SearchBarState extends State<SearchBar> {
   final _searchController = TextEditingController();
 
   @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+
+  @override
   void initState() {
+    super.initState();
     _searchController.text =
         Provider.of<ListReposProvider>(context, listen: false).username;
-    super.initState();
   }
 
   @override

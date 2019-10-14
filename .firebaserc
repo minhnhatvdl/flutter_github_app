@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "github-dashboard-flutter"
+    "flutter_github_app_forked": "githubdashboard-e5b20",
+    "default": "githubdashboard-e5b20"
   }
 }
